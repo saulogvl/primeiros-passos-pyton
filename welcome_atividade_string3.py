@@ -1,7 +1,6 @@
-class Player: #A classe player
-    
+class Player: 
     def __init__(self, name):
-
+        
         self.name = name
 
         self.speed = 0
@@ -36,71 +35,73 @@ class Player: #A classe player
 
             self.average = 0
 
+
     def display_stats(self):
 
         #Exibe as estatísticas completas do jogador.
-        print(f"Jogador: {self.name}")
 
-        print(f"  Velocidade: {self.speed}")
+        print(f"Player: {self.name}")
 
-        print(f"  Drible: {self.dribble}")
+        print(f"  Speed: {self.speed}")
 
-        print(f"  Jogos: {self.games}")
+        print(f"  Dribble: {self.dribble}")
 
-        print(f"  Gols: {self.goals}")
+        print(f"  Games: {self.games}")
 
-        print(f"  Média de gols: {self.average:.2f}\n")
-    
+        print(f"  Goals: {self.goals}")
+
+        print(f"  Goals per game average: {self.average:.2f}\n")
 
 
-# Lista para armazenar os jogadores
+
+# List to store players
 team_list = []
 
-# Coletar os jogadores para o time
-
+# Collect players for the team
 team = True
 
 while team:
 
-    answer = input('Por favor, adicione jogadores ao seu time (um de cada vez) (digite "end" para finalizar): ')
+    answer = input('Please add players to your team (one at a time) (type "end" to finish): ')
     
     if answer.lower() == 'end':
 
-        team = False  # finaliza o loop
+        team = False  # End the loop
 
-        print('Cadastro de time finalizado.')
+        print('Team registration finished.')
 
     elif answer:
 
-        player = Player(answer)  # Cria uma instância da classe Player
+        player = Player(answer)  # Create an instance of the Player class
 
-        team_list.append(player)  # Adiciona o jogador à lista de jogadores
+        team_list.append(player)  # Add the player to the player list
 
-        print(f'Seu time no momento é: {", ".join([p.name for p in team_list])}')
+        print(f'Your team so far: {", ".join([p.name for p in team_list])}')
 
 
-
-# Coletar habilidades dos jogadores
+# Collect player skills
 for player in team_list:
 
-    speed = int(input(f'Avalie a velocidade de {player.name} (entre 0 e 10): '))
+    speed = int(input(f'Rate {player.name}\'s speed (between 0 and 10): '))
 
-    dribble = int(input(f'Avalie o drible de {player.name} (entre 0 e 10): '))
+    dribble = int(input(f'Rate {player.name}\'s dribble (between 0 and 10): '))
 
-    player.set_skills(speed, dribble)  # Define as habilidades do jogador
+    player.set_skills(speed, dribble)  # Set player skills
 
-# Coletar desempenho (jogos e gols) dos jogadores
+# Collect performance (games and goals) for players
 for player in team_list:
 
-    games = int(input(f'Quantos jogos {player.name} jogou? '))
+    games = int(input(f'How many games has {player.name} played? '))
 
-    goals = int(input(f'Quantos gols {player.name} marcou? '))
+    goals = int(input(f'How many goals has {player.name} scored? '))
 
-    player.set_performance(games, goals)  # Define os jogos e gols
+    player.set_performance(games, goals)  # Set games and goals
 
-# Exibir todas as estatísticas dos jogadores
-print("\nEstatísticas completas dos jogadores:")
+# Display all player stats
+print("\nComplete player statistics:")
 
 for player in team_list:
 
     player.display_stats()
+
+# #RegistroDeTime #HabilidadesDosJogadores #EstatisticasDosJogadores #PythonClasses #MediaDeGols
