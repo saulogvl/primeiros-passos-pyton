@@ -1,0 +1,1 @@
+alert('Atenção calculos de porcentagem e alguns outros, ainda não foram adicionados!')

@@ -1,9 +1,10 @@
 from player import Player  # Importa a classe Player do arquivo player.py
+from typing import List
 
 
 # Lista para armazenar os nomes dos jogadores e dicionário para instâncias
 
-team_list = []
+team_list : [Player] = []
 
 players_dict = {}
 
@@ -101,8 +102,14 @@ for player_name in team_list:
 
 print("\nFinal statistics of players:")
 
+for p in team_list:
+    print(p.kick_penalty())
+
+
+
 for player in players_dict.values():
 
     # Imprime as estatísticas de cada jogador usando o método __str__
+
 
     print(player)

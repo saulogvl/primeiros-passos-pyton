@@ -1,3 +1,5 @@
+import random
+
 class Player:
 
     def __init__(self, name):
@@ -33,6 +35,13 @@ class Player:
         self.goals = goals
 
         self.average_goals = goals / games if games > 0 else 0.0
+
+    def kick_penalty(self) -> str:
+
+        if random.choice([True,False]):
+            return(f'{self.name} maked gol!')
+        else:
+            return(f'{self.name} dont maked gol!')
 
     def __str__(self):
 
